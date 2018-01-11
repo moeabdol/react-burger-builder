@@ -21,7 +21,7 @@ buildControl.propTypes = {
   label: PropTypes.string,
   added: PropTypes.func,
   removed: PropTypes.func,
-  disabled: PropTypes.boolean
+  disabled: PropTypes.bool
 };
 
 export default buildControl;
