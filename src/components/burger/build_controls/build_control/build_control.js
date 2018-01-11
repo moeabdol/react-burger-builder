@@ -6,12 +6,17 @@ const buildControl = props => (
   <div className={styles.buildControl}>
     <div className={styles.label}>{props.label}</div>
     <button className={styles.less}>Less</button>
-    <button className={styles.more}>More</button>
+    <button
+      className={styles.more}
+      onClick={props.added}>
+      More
+    </button>
   </div>
 );
 
 buildControl.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
+  added: PropTypes.func
 };
 
 export default buildControl;

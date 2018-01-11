@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './build_controls.css';
 import BuildControl from './build_control/build_control';
 
@@ -9,12 +10,21 @@ const controls = [
   { label: 'Meat', type: 'meat' }
 ];
 
-const buildControls = () => (
+const buildControls = props => (
   <div className={styles.buildControls}>
     {controls.map(ctrl => {
-      return <BuildControl key={ctrl.label} label={ctrl.label} />;
+      return (
+        <BuildControl
+          key={ctrl.label}
+          label={ctrl.label}
+          added={() => props.ingredientAdded(ctrl.type)}/>
+      );
     })}
   </div>
 );
+
+buildControls.propTypes = {
+  ingredientAdded: PropTypes.func
+};
 
 export default buildControls;
