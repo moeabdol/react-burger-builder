@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from '../../ui/button/button';
 
 const orderSummary = props => {
   const ingredientSummary = Object.keys(props.ingredients)
@@ -21,12 +22,20 @@ const orderSummary = props => {
         {ingredientSummary}
       </ul>
       <p>Continue to Checkout?</p>
+      <Button
+        btnType="danger"
+        clicked={props.purchaseCancelled}>CANCEL</Button>
+      <Button
+        btnType="success"
+        clicked={props.purchaseContinued}>CONTINUE</Button>
     </React.Fragment>
   );
 };
 
 orderSummary.propTypes = {
-  ingredients: PropTypes.object
+  ingredients: PropTypes.object,
+  purchaseCancelled: PropTypes.func,
+  purchaseContinued: PropTypes.func
 };
 
 export default orderSummary;
