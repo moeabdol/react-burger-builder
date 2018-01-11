@@ -12,6 +12,7 @@ const controls = [
 
 const buildControls = props => (
   <div className={styles.buildControls}>
+    <p>Current Price: <strong>{props.price.toFixed(2)}</strong></p>
     {controls.map(ctrl => {
       return (
         <BuildControl
@@ -27,7 +28,8 @@ const buildControls = props => (
 
 buildControls.propTypes = {
   ingredientAdded: PropTypes.func,
-  disabled: PropTypes.object
+  disabled: PropTypes.object,
+  price: PropTypes.number
 };
 
 export default buildControls;
