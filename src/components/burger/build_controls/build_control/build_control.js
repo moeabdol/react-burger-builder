@@ -7,21 +7,21 @@ const buildControl = props => (
     <div className={styles.label}>{props.label}</div>
     <button
       className={styles.less}
-      onClick={props.removed}>
-      Less
-    </button>
+      onClick={props.removed}
+      disabled={props.disabled}>
+      Less</button>
     <button
       className={styles.more}
       onClick={props.added}>
-      More
-    </button>
+      More</button>
   </div>
 );
 
 buildControl.propTypes = {
   label: PropTypes.string,
   added: PropTypes.func,
-  removed: PropTypes.func
+  removed: PropTypes.func,
+  disabled: PropTypes.boolean
 };
 
 export default buildControl;
