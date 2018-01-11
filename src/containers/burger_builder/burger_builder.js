@@ -40,15 +40,15 @@ class BurgerBuilder extends Component {
 
   purchaseHandler = () => {
     this.setState({ purchasing: true });
-  }
+  };
 
   purchaseCancelHandler = () => {
     this.setState({ purchasing: false });
-  }
+  };
 
   purchaseContinueHandler = () => {
     alert('you continue!');
-  }
+  };
 
   addIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
@@ -63,7 +63,7 @@ class BurgerBuilder extends Component {
       ingredients: updatedIngredients
     });
     this.updatePurchaseState(updatedIngredients);
-  }
+  };
 
   removeIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
@@ -79,7 +79,7 @@ class BurgerBuilder extends Component {
       ingredients: updatedIngredients
     });
     this.updatePurchaseState(updatedIngredients);
-  }
+  };
 
   render() {
     const disabledInfo = {
